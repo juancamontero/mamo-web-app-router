@@ -1,7 +1,7 @@
 import { IconActivity } from "@tabler/icons-react"
 
 type Props = {
-  service: Service
+  service: ServiceMeta
 }
 
 export default function HeroService({ service }: Props) {

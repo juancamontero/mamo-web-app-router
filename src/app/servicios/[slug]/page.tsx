@@ -1,22 +1,26 @@
 import HeroService from "@/app/components/hero-service"
-import { getServiceDataBySlug, getServicesData } from "@/lib/services-data"
+import { getServiceByFileName, getServicesMeta } from "@/lib/services-data"
 
-type Params = {
+export const revalidate = 0
+
+type Props = {
   params: {
     slug: string
   }
 }
 
-export function generateStaticParams() {
-  const services: Service[] = getServicesData()
+export async function generateStaticParams() {
+  const services = await getServicesMeta()
+
+  if (!services) return []
 
   return services.map((service) => ({
     slug: service.slug,
   }))
 }
 
-export function generateMetadata({ params: { slug } }: Params) {
-  const service = getServiceDataBySlug(slug)
+export async function generateMetadata({ params: { slug } }: Props) {
+  const service = await getServiceByFileName(`${slug}.mdx`)
 
   if (!service)
     return {
@@ -24,16 +28,17 @@ export function generateMetadata({ params: { slug } }: Params) {
     }
 
   return {
-    title: service.title,
-    description: service.description,
+    title: service.meta.title,
+    description: service.meta.description,
   }
 }
 
-export default function ServicePage({ params: { slug } }: Params) {
-  const service = getServiceDataBySlug(slug)
+export default async function ServicePage({ params: { slug } }: Props) {
+  const service = await getServiceByFileName(`${slug}.mdx`)
+  if (!service) return <p>No se pudo cargar la información del servicio</p>
   return (
     <>
-      <HeroService service={service} />
+      <HeroService service={service.meta} />
     </>
   )
 }
