@@ -1,13 +1,7 @@
 import { GIT_REPO_SERVICES_URL, GIT_REPO_URL } from "./constants"
 import { compileMDX } from "next-mdx-remote/rsc"
+import CustomImage from "../app/components/custom-image"
 
-type FileTree = {
-  tree: [
-    {
-      path: string
-    }
-  ]
-}
 export async function getServiceByFileName(
   filename: string
 ): Promise<Service | undefined> {
@@ -30,6 +24,9 @@ export async function getServiceByFileName(
     order: string
   }>({
     source: rawMDX,
+    components: {
+      CustomImage,
+    },
     options: {
       parseFrontmatter: true,
     },
@@ -76,5 +73,5 @@ export async function getServicesMeta(): Promise<ServiceMeta[] | undefined> {
     }
   }
 
-  return services.sort((a, b) => (a.order < b.order ? 1 : -1))
+  return services.sort((a, b) => (a.order > b.order ? 1 : -1))
 }

@@ -9,12 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#FF991B",
-        "accent-3": "#1BD155",
-        "back-color": "#101827",
-        success: "#0070f3",
-        cyan: "#79FFE1",
+        "primary-100": "#2563eb",
+        "primary-200": "#598EF3",
+        "primary-300": "#D3E6FE",
+        "accent-100": "#ff6600",
+        "accent-200": "#ffffa1",
+        "text-100": "#cbd5e1",
+        "text-200": "#94a3b8",
+        "bg-100": "#1e293b",
+        "bg-200": "#334155",
+        "bg-300": "#475569",
       },
       spacing: {
         28: "7rem",
@@ -40,7 +44,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
   darkMode: "class",
 }
 export default config

@@ -1,15 +1,23 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Header from './components/header'
+import "./globals.css"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import Header from "./components/header"
+import Footer from "./components/footer"
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'MAMO',
-  description: 'Nano-fortalecimiento empresarial',
+  title: "MAMMO - Nanofortalecimiento",
+  description: "Nano-fortalecimiento empresarial",
+  icons: {
+    icon: "/favicon.png",
+  },
+  openGraph: {
+    images: ['/og-image.webp']
+  }
 }
 
+const bodyBasicStyle: string = `${inter.className} bg-bg-300`
 export default function RootLayout({
   children,
 }: {
@@ -17,10 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <Header/>
+      <body className={bodyBasicStyle}>
+        {/*  */}
+        <Header />
         {children}
-        </body>
+        <Footer />
+      </body>
     </html>
   )
 }

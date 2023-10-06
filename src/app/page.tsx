@@ -1,9 +1,8 @@
-// import Image from "next/image"
-
 import { HeroHome } from "./components/hero-home"
+import MainSection from "./components/home-main-section"
 import ServicesSection from "./components/services-section"
 
-// import { getHomeSlidesSlugs } from "@/lib/slides-data"
+export const revalidate = 10
 
 export default function Home() {
   return (
@@ -11,6 +10,8 @@ export default function Home() {
       <HeroHome />
       <section className="container mx-auto px-5">
         <ServicesSection />
+        <MainSection />
+       
       </section>
     </main>
   )
