@@ -9,16 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "primary-100": "#2563eb",
-        "primary-200": "#598EF3",
-        "primary-300": "#D3E6FE",
-        "accent-100": "#ff6600",
-        "accent-200": "#ffffa1",
-        "text-100": "#cbd5e1",
-        "text-200": "#94a3b8",
-        "bg-100": "#1e293b",
-        "bg-200": "#334155",
-        "bg-300": "#475569",
+        "primary-100":"#0085ff",
+        "primary-200":"#69b4ff",
+        "primary-300":"#e0ffff",
+        "accent-100":"#006fff",
+        "accent-200":"#e1ffff",
+        "text-100":"#FFFFFF",
+        "text-200":"#9e9e9e",
+        "bg-100":"#1E1E1E",
+        "bg-200":"#2d2d2d",
+        "bg-300":"#454545",
+          
       },
       spacing: {
         28: "7rem",
@@ -39,8 +40,8 @@ const config: Config = {
         "8xl": "6.25rem",
       },
       boxShadow: {
-        sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
-        md: "0 8px 30px rgba(0, 0, 0, 0.12)",
+        sm: "0 5px 10px rgba(0, 0, 0, 0.32)",
+        md: "0 8px 30px rgba(0, 0, 0, 0.32)",
       },
     },
   },

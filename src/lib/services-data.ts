@@ -60,6 +60,8 @@ export async function getServicesMeta(): Promise<ServiceMeta[] | undefined> {
 
   const repoFileTree: FileTree = await res.json()
 
+  // console.log(repoFileTree)
+
   const filesArray = repoFileTree.tree
     .map((obj) => obj.path)
     .filter((path) => path.endsWith(".mdx"))

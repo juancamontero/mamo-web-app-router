@@ -5,6 +5,7 @@ import { getServicesMeta } from "@/lib/services-data"
 
 export default async function ServicesSection() {
   const services = await getServicesMeta()
+  // console.log(services)
  
   if (!services) return <p>Lo sentimos, los servicios no están disponibles</p>
   return (

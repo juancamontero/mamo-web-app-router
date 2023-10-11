@@ -2,7 +2,7 @@ import { HeroHome } from "./components/hero-home"
 import MainSection from "./components/home-main-section"
 import ServicesSection from "./components/services-section"
 
-export const revalidate = 10
+export const revalidate = 86400
 
 export default function Home() {
   return (

@@ -2,7 +2,8 @@ import HeroService from "@/app/components/hero-service"
 import { getServiceByFileName, getServicesMeta } from "@/lib/services-data"
 import { notFound } from "next/navigation"
 
-export const revalidate = 10
+export const revalidate = 86400
+
 
 type Props = {
   params: {

@@ -1,4 +1,7 @@
+import Image from "next/image"
+
 import { getSlidesMeta } from "@/lib/slides-data"
+
 
 export async function HeroHome() {
   const homeSlides = await getSlidesMeta()
@@ -18,39 +21,22 @@ export async function HeroHome() {
               {title}
             </h1>
             <div className="max-w-xl mb-6">
-              <h2 className="max-w-lg mb-6  text-lg font-light tracking-tight text-text-100 sm:text-3xl sm:leading-none">
+              <h2 className="max-w-lg mb-6  text-lg font-light tracking-tight text-text-100 sm:text-3xl ">
                 {subTitle}
               </h2>
-              <p className="text-base text-text-200 md:text-lg">
+              <p className="text-base text-text-200 md:text-xl">
                 {paragraph}
               </p>
             </div>
           </div>
           <div className="relative">
-            <svg
-              className="absolute w-full text-accent-200"
-              fill="currentColor"
-              viewBox="0 0 600 392"
-            >
-              <rect x="0" y="211" width="75" height="181" rx="8" />
-              <rect x="525" y="260" width="75" height="132" rx="8" />
-              <rect x="105" y="83" width="75" height="309" rx="8" />
-              <rect x="210" y="155" width="75" height="237" rx="8" />
-              <rect x="420" y="129" width="75" height="263" rx="8" />
-              <rect x="315" y="0" width="75" height="392" rx="8" />
-            </svg>
-            <svg
-              className="relative w-full text-primary-100"
-              fill="currentColor"
-              viewBox="0 0 600 392"
-            >
-              <rect x="0" y="311" width="75" height="81" rx="8" />
-              <rect x="525" y="351" width="75" height="41" rx="8" />
-              <rect x="105" y="176" width="75" height="216" rx="8" />
-              <rect x="210" y="237" width="75" height="155" rx="8" />
-              <rect x="420" y="205" width="75" height="187" rx="8" />
-              <rect x="315" y="83" width="75" height="309" rx="8" />
-            </svg>
+          <Image
+               
+                src="/nanofortalecimiento.webp"
+                height={650}
+                width={650}
+                alt="gráfica de crecimiento"
+              />
           </div>
         </div>
       </div>
